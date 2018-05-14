@@ -25,7 +25,7 @@ $app = new Laravel\Lumen\Application(
 
 $app->configure('cors');
 
-// $app->withFacades();
+$app->withFacades();
 
 // $app->withEloquent();
 
@@ -74,6 +74,10 @@ $app->middleware([
 //     'auth' => App\Http\Middleware\Authenticate::class,
 // ]);
 
+$app->routeMiddleware([
+    'csrf' => 'App\Http\Middleware\VerifyCsrfToken',
+]);
+
 
 
 
@@ -88,7 +92,7 @@ $app->middleware([
 |
 */
 
-$app->register(App\Providers\AgendaServiceProvider::class);
+//$app->register(App\Providers\AgendaServiceProvider::class);
 $app->register(Barryvdh\Cors\ServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);

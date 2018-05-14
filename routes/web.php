@@ -15,7 +15,7 @@ $router->get('/', function () {
 });
 
 $router->get('/api/list', 'AgendaController@index');
-$router->get('/storeCalourada', 'AgendaController@store');
+$router->post('/api/store', 'AgendaController@store');
 
 
 $router->get('/oauth2callback', function ($code) use ($router) {
