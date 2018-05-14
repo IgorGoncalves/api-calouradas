@@ -93,7 +93,7 @@ class AgendaController extends Controller
           $calendarId = 'primary';
           $event = $this->service->events->insert($calendarId, $event);
           $response->data = $event;
-          
+
         return json_encode($response);
     }
 
