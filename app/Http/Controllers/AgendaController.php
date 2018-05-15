@@ -105,7 +105,7 @@ class AgendaController extends Controller
         $client->setAuthConfig('client_secret.json');
         $client->setAccessType('offline');
         // Load previously authorized credentials from a file.
-        $credentialsPath = $this->getHomeDirectory('credentials.json');                
+        $credentialsPath = getEnv("HOMEPATH").'credentials.json';
 
         if (file_exists($credentialsPath)) {
             $accessToken = json_decode(file_get_contents($credentialsPath), true);            
