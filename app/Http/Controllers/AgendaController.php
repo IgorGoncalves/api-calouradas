@@ -19,12 +19,13 @@ class AgendaController extends Controller
 
     function index(){                         
       // Print the next 10 events on the user's calendar.
+      $initialDate = (new \DateTime())->sub(new \DateInterval('P2D'))->format('Y-m-d\TH:i:sO');
       $calendarId = 'primary';
       $optParams = array(
         'maxResults' => 10,
         'orderBy' => 'startTime',
         'singleEvents' => true,
-        'timeMin' => date('c'),
+        'timeMin' => $initialDate,
       );
       
       $results = $this->service->events->listEvents($calendarId, $optParams);
