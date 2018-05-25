@@ -5,3 +5,4 @@ Homestead.yaml
 .env
 credentials.json
 /public/client_secret.json
+/public/credentials.json
